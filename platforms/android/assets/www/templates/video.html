@@ -1,0 +1,40 @@
+<link href="css/bootstrap.css" rel="stylesheet">
+<ion-view view-title="Video opplasting">
+    <ion-content class="padding" ng-controller="VideoCtrl">
+      <!-- The Choose video button -->
+      <button class="button button-block button-positive icon-left ion-ios-film" ng-click="showOptions()">{{caption}}</button>
+      <!-- The video player -->
+      <cordova-video src="data.videoPath"></cordova-video>
+      <!-- Hidden by default, shown when video is choosen -->
+      <div class="list card padding" ng-if="show">
+      <!-- The html progress bar -->
+      <div class="progress" >
+        <div>
+        <div id="progress" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="46" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+         0%
+
+         <!-- Update progress bar script -->
+         <script type="text/javascript">
+
+    /**
+        * Updat progress bar.
+        */
+       function updateProgress(progress) {
+          progress = Math.floor(progress * 100);
+          var element = document.getElementById('progress');
+          element.setAttribute('style', 'width:'+progress+'%');
+          element.innerHTML = progress+'%';
+       }
+
+
+      progress
+
+    </script>
+        </div>
+        </div>
+      </div>
+      <!-- The button that will trigger the upload to Vimeo function(uploadVideo) -->
+      <button class="button button-block button-positive icon-left ion-upload" ng-click="uploadVideo()">Last opp Video</button>
+      </div>
+    </ion-content>
+</ion-view>
