@@ -34,7 +34,7 @@ og sett nettleservinduet i utviklermodus
 Det anbefales at appen kompileres(build) og installeres på mobil enhet da en må ha tilgang til enhetens kamera og video-bibliotek. Når video-opptak er gjort eller tidligere opptak valg, vil en Last opp video-knapp bli synlig. Det er denne knappen som skal igangsette opplastingen til Dokkers Vimeo-konto. Etter anbefalig fra Vimeo har jeg valgt å benytte et Cordova-tilrettelagt skript som er å finne på: <a href>https://github.com/websemantics/vimeo-upload</a>.
 <code>upload-cordova.js</code> vil lage et FileReader object og la dette ta hånd om opplastingen.
 
-Her er utsnitt fra e-post kommunikasjon med Adnan:
+Her er utsnitt fra e-post kommunikasjon med Adnan:</br>
 ... for Cordova I avoided using content(blog object) and manually initiated a FileReader object.
 
 Yes, you need the FileTransfer plugin, 
@@ -45,6 +45,6 @@ Triggering the upload process goes the same as the example provided in index.htm
 
 <a href>https://github.com/websemantics/vimeo-upload/pull/3/files</a>
 
-Hope that helps .. Take care
+Hope that helps .. Take care</br>
 Adnan
 
