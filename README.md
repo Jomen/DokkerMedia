@@ -59,3 +59,10 @@ Det jeg tenker er å få "bygd om" index.html fra å bruke <code>drop_zone</code
 Adnan som har skrevet <code>upload.js</code> anbefaler bruk av <code>FileReader</code> siden dette har god støtte i Cordova og dens <code>FileTransfer</code> plugin. Jeg mener at <code>FileReader</code>-objectet blir laget ved identifisering a Cordova i <code>upload-cordova.js</code> og ikke før.</br>
 Jeg er litt usikker på om <code>upload-cordova.js</code> er implementert riktig eller på beste måte når det bare er som <code>src</code> til <code>index.html</code> eller at om kode i <code>upload-cordova.js</code> burde bygges inn i en Angular  <code>.controller</code> eller kanskje aller helst <code>.service</code> i prosjektet?
 
+<strong>I korte trekk ønsker jeg at man:</strong>
+1: Tester <a href="http://websemantics.github.io/vimeo-upload/">vimeo-upload</a> på nett og lokalt og ser på koden i <code>index.html</code> med tanke på overføring til DokkerMedia-appen og dens <code>uploadVideo()</code>-knapp.
+
+2: Ser på implementeringen av scriptet: <code>upload-cordova.js</code> om dette bør/kan gjøres på en mer integrerende måte f.eks som en <code>.service</code>.
+
+3: Ser på om video-objectet blir fanget opp og lagt til opplastingsprosessen på riktig måte.
+
