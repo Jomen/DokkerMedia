@@ -66,4 +66,4 @@ Jeg er litt usikker på om <code>upload-cordova.js</code> er implementert riktig
 
 3: Ser på om video-objectet blir fanget opp og lagt til opplastingsprosessen på riktig måte.
 
-Noe er det som jeg ikke klarer å fange opp her etter forsøk med utallige varianter. Jeg føler at jeg er så nær, men så er det noe som ikke er spoton, og det må det jo være.
+Noe er det som jeg ikke klarer å fange opp her etter forsøk med utallige varianter. Jeg føler at jeg er så nær, men så er det noe som ikke er "spot on", og det må det jo være.
