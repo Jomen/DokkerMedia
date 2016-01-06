@@ -56,4 +56,6 @@ Selve opplastingsscriptet er i dette eksemplet lagt til på vanlig måte som en 
 
 Det jeg tenker er å få "bygd om" index.html fra å bruke <code>drop_zone</code> og <code>handleDragOver</code> til at <code>handleFileSelect</code> funksjonen blir avfyrt av en knapp med <code>uploadVideo()</code>funksjon(<code>video.html</code> linje 37) og (<code>controllers.js</code> linje 105). <code>handleFileSelect</code> i <code>index.html</code> må da ha på plass både <code>files</code> og <code>accessToken</code> for at <code>upload-cordova.js</code> og <code>FileReader</code> kan starte.
 
+Adnan som har skrevet <code>upload.js</code> anbefaler bruk av <code>FileReader</code> siden dette har god støtte i Cordova og dens <code>FileTransfer</code> plugin. Jeg mener at <code>FileReader</code>-objectet blir laget ved identifisering a Cordova i <code>upload-cordova.js</code> og ikke før.</br>
+Jeg er litt usikker på om <code>upload-cordova.js</code> er implementert riktig eller på beste måte når det bare er som <code>src</code> til <code>index.html</code> eller at om kode i <code>upload-cordova.js</code> burde bygges inn i en Angular  <code>.controller</code> eller kanskje aller helst en <code>.service</code> i prosjektet?
 
