@@ -52,7 +52,7 @@ Adnan
 Jeg ønsker at man tester Live versjonen av <a href="http://websemantics.github.io/vimeo-upload/">vimeo-upload</a> med <code>accessToken</code> key som er å finne i <code>controller.js</code> og <code>uploadVideo</code> funksjonen. Last gjerne også ned <code>index.html</code> og <code>upload-cordova.js</code> og gjør <code>local</code> test. <code>index.html</code> til vimeo-upload benytter en <code>drop_zone</code> div med <code>handleDragOver</code> funksjon som igjen fyrer av en <code>handleFileSelect</code> med <code>var uploader = new MediaUploader</code>... og ...<code>uploader.upload();</code>.
 
 Selve opplastingsscriptet er i dette eksemplet lagt til på vanlig måte som en script source i <code>index.html</code> med Cordova indentifisering:</br>
-<code><script src="js/upload-cordova.js" onload="javascript:window.isCordovaApp = true;"></script></code>
+<code>script src="js/upload-cordova.js" onload="javascript:window.isCordovaApp = true;"</code>
 
 Det jeg tenker er å få "bygd om" index.html fra å bruke <code>drop_zone</code> og <code>handleDragOver</code> til at <code>handleFileSelect</code> funksjonen blir avfyrt av en knapp med <code>uploadVideo()</code>funksjon(<code>video.html</code> linje 37) og (<code>controllers.js</code> linje 105). <code>handleFileSelect</code> i <code>index.html</code> må da ha på plass både <code>files</code> og <code>accessToken</code> for at <code>upload-cordova.js</code> og <code>FileReader</code> kan starte.
 
