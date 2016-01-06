@@ -23,7 +23,7 @@ og sett nettleservinduet i utviklermodus
 
 <em>Emuler mobilapp:</em>
 
-<code>$ ionic emulate ios</code>       (xcode installert)</br>
+<code>$ ionic emulate ios</code>       (Xcode installert)</br>
 <code>$ ionic run android</code>       (Genymotion installert og kjørende)
 
 <em>Installer og kjør app på USB-tilkoblet enhet/mobil:</em>
