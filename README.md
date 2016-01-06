@@ -1,5 +1,6 @@
 # DokkerMedia
 
+Kjøre/teste mobilappen:</br>
 Node.js må være installert. 
 Jeg bruker versjon: <code>4.2.2</code> (usikker om nyere versjoner fungerer optimalt ved build).
 
