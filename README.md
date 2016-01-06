@@ -31,7 +31,7 @@ og sett nettleservinduet i utviklermodus
 <code>$ ionic run ios --device</code></br>
 <code>$ ionic run android --device</code>
 
-<strong>Om DokkerMedia appen:</strong>
+<strong>Om DokkerMedia appen:</strong></br>
 Det anbefales at appen kompileres(build) og installeres på mobil enhet da en må ha tilgang til enhetens kamera og video-bibliotek. Når video-opptak er gjort eller tidligere opptak valg, vil en Last opp video-knapp bli synlig. Det er denne knappen som skal igangsette opplastingen til Dokkers Vimeo-konto. Etter anbefalig fra Vimeo har jeg valgt å benytte et Cordova-tilrettelagt skript som er å finne på: <a href>https://github.com/websemantics/vimeo-upload</a>.</br>
 <code>upload-cordova.js</code> vil lage et FileReader object og la dette ta hånd om opplastingen.
 
@@ -46,8 +46,8 @@ Triggering the upload process goes the same as the example provided in index.htm
 
 <a href>https://github.com/websemantics/vimeo-upload/pull/3/files</a>
 
-Hope that helps .. Take care</br>
-Adnan
+<em>Hope that helps .. Take care</br>
+Adnan</em>
 
 Jeg ønsker at man tester Live versjonen av <a href="http://websemantics.github.io/vimeo-upload/">vimeo-upload</a> med <code>accessToken</code> key som er å finne i <code>controller.js</code> og <code>uploadVideo</code> funksjonen. Last gjerne også ned <code>index.html</code> og <code>upload-cordova.js</code> og gjør <code>local</code> test. <code>index.html</code> til vimeo-upload benytter en <code>drop_zone</code> div med <code>handleDragOver</code> funksjon som igjen fyrer av en <code>handleFileSelect</code> med <code>var uploader = new MediaUploader</code>... og ...<code>uploader.upload();</code>.
 
