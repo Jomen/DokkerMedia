@@ -52,7 +52,7 @@ angular.module('dokkermedia.controllers', [])
     sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
     mediaType:Camera.MediaType.VIDEO
   };
-      
+
 
   $cordovaCamera.getPicture(options).then(function(imageData){
       // $scope.hide($ionicLoading);
@@ -65,7 +65,7 @@ angular.module('dokkermedia.controllers', [])
       console.log(err);
     });
   }
-    
+
 
   $scope.showOptions = function(){
     var hideSheet = $ionicActionSheet.show({
@@ -91,7 +91,7 @@ angular.module('dokkermedia.controllers', [])
                         }
                         // Cancel operation
                         else {
-                            
+
                         }
                         return true;
                     }
@@ -101,47 +101,64 @@ angular.module('dokkermedia.controllers', [])
   };
 
 
+  /**
+   * Update progress bar.
+   */
+  $scope.updateProgress = function(progress) {
+    progress = Math.floor(progress * 100);
+    var element = document.getElementById('progress');
+    element.setAttribute('style', 'width:'+progress+'%');
+    element.innerHTML = progress+'%';
+  };
+
 
   $scope.uploadVideo = function(){
-        // Here the video object(video file for upload) must be identified and the upload-cordova.js(functions) is intended to be triggered
-         var files = videoPath; // FileList object.
-         var accessToken = "ebe7fcd1378b55765fb124fcc6464e0e";
+    // Here the video object(video file for upload) must be identified and the upload-cordova.js(functions) is intended to be triggered
+    var files = [];
+    files[0] = $scope.data.videoPath; // FileList object.
 
-         // Rest the progress bar
-         updateProgress(0);
+    var accessToken = "ebe7fcd1378b55765fb124fcc6464e0e";
 
-         var uploader = new MediaUploader({
-             file: files[0],
-             token: accessToken,
-             
-             onError: function(data) {
+    // Rest the progress bar
+    $scope.updateProgress(0);
 
-                var errorResponse = JSON.parse(data);
-                message = errorResponse.error;
+    var uploader = new MediaUploader({
+      file: files[0],
+      token: accessToken,
 
-             },
-             onProgress: function(data) {
-                updateProgress(data.loaded / data.total);
-             },
-             onComplete: function(videoId) {
+      onError: function(data) {
 
-                var url = "https://vimeo.com/"+videoId;
+        console.log('Error ', data);
 
-                var a = document.createElement('a');
-                a.appendChild(document.createTextNode(url));
-                a.setAttribute('href',url);
+        var errorResponse = JSON.parse(data);
+        message = errorResponse.error;
+      },
 
-                var element = document.createElement("div");
-                element.setAttribute('class', "alert alert-success");
-                element.appendChild(a);
+      onProgress: function(data) {
+        console.log('in progress...');
 
-                document.getElementById('results').appendChild(element);
-             }
-         });
-         uploader.upload();
-    
-         
-  }
+        $scope.updateProgress(data.loaded / data.total);
+      },
+
+      onComplete: function(videoId) {
+        console.log('Complete ',videoId);
+
+        var url = "https://vimeo.com/"+videoId;
+        var a = document.createElement('a');
+        a.appendChild(document.createTextNode(url));
+        a.setAttribute('href',url);
+
+        var element = document.createElement("div");
+        element.setAttribute('class', "alert alert-success");
+        element.appendChild(a);
+
+        document.getElementById('results').appendChild(element);
+      }
+    });
+
+    uploader.upload();
+
+  };
 
 
 
