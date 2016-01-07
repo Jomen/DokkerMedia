@@ -105,7 +105,7 @@ angular.module('dokkermedia.controllers', [])
   $scope.uploadVideo = function(){
         // Here the video object(video file for upload) must be identified and the upload-cordova.js(functions) is intended to be triggered
          var files = videoPath; // FileList object.
-         var accessToken = "ebe7fcd1378b55765fb124fcc6464e0e"
+         var accessToken = "ebe7fcd1378b55765fb124fcc6464e0e";
 
          // Rest the progress bar
          updateProgress(0);
